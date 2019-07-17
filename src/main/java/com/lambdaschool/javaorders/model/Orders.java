@@ -23,12 +23,12 @@ public class Orders
     {
     }
 
-    public Orders(double ORDAMOUNT, double ADVANCEAMOUNT, String ORDDESCRIPTION, Customers customers)
+    public Orders(double ORDAMOUNT, double ADVANCEAMOUNT, Customers customers, String ORDDESCRIPTION)
     {
         this.ORDAMOUNT = ORDAMOUNT;
         this.ADVANCEAMOUNT = ADVANCEAMOUNT;
-        this.ORDDESCRIPTION = ORDDESCRIPTION;
         this.customers = customers;
+        this.ORDDESCRIPTION = ORDDESCRIPTION;
     }
 
     public long getORDNUM()
