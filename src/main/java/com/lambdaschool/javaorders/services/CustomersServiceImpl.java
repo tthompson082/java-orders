@@ -79,7 +79,7 @@ public class CustomersServiceImpl implements CustomersService
 
         for (Orders o : customers.getOrders())
         {
-            newCustomers.getOrders().add(new Orders(o.getOrdamount(), o.getAdvanceamount(), o.getCustomers(), o.getOrddescription()));
+            newCustomers.getOrders().add(new Orders(o.getOrdamount(), o.getAdvanceamount(), newCustomers, o.getOrddescription()));
         }
 
         return custrepos.save(newCustomers);
