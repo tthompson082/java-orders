@@ -60,7 +60,7 @@ public class AgentsServiceImpl implements AgentsService
 
         for (Customers c : agents.getCustomers())
         {
-            newAgents.getCustomers().add(new Customers(c.getCUSTNAME(), c.getCUSTCITY(), c.getWORKINGAREA(), c.getCUSTCOUNTRY(), c.getGRADE(), c.getOPENINGAMT(), c.getRECEIVEAMT(), c.getPAYMENTAMT(), c.getOUTSTANDINGAMT(), c.getPHONE(), c.getAgents()));
+            newAgents.getCustomers().add(new Customers(c.getCustname(), c.getCUSTCITY(), c.getWORKINGAREA(), c.getCUSTCOUNTRY(), c.getGRADE(), c.getOPENINGAMT(), c.getRECEIVEAMT(), c.getPAYMENTAMT(), c.getOUTSTANDINGAMT(), c.getPHONE(), c.getAgents()));
         }
 
         return agentrepos.save(newAgents);

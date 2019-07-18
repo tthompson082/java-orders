@@ -35,7 +35,7 @@ public class CustomersServiceImpl implements CustomersService
     @Override
     public Customers findCustomerByName(String name)
     {
-        Customers customers = custrepos.findByName(name);
+        Customers customers = custrepos.findByCustname(name);
 
         if (customers == null)
         {
@@ -59,12 +59,13 @@ public class CustomersServiceImpl implements CustomersService
         }
     }
 
+    @Transactional
     @Override
     public Customers save(Customers customers)
     {
         Customers newCustomer = new Customers();
 
-        newCustomer.setCUSTNAME(customers.getCUSTNAME());
+        newCustomer.setCustname(customers.getCustname());
         newCustomer.setCUSTCITY(customers.getCUSTCITY());
         newCustomer.setWORKINGAREA(customers.getWORKINGAREA());
         newCustomer.setCUSTCOUNTRY(customers.getCUSTCOUNTRY());
@@ -84,14 +85,15 @@ public class CustomersServiceImpl implements CustomersService
         return custrepos.save(newCustomer);
     }
 
+    @Transactional
     @Override
     public Customers update(Customers customers, long id)
     {
         Customers currentCustomer = custrepos.findById(id).orElseThrow(() -> new EntityNotFoundException(Long.toString(id)));
 
-        if (customers.getCUSTNAME() != null)
+        if (customers.getCustname() != null)
         {
-            currentCustomer.setCUSTNAME(customers.getCUSTNAME());
+            currentCustomer.setCustname(customers.getCustname());
         }
 
         if (customers.getCUSTCITY() != null)

@@ -1,5 +1,7 @@
 package com.lambdaschool.javaorders.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +15,7 @@ public class Customers
     private long CUSTCODE;
 
     @Column(nullable = false)
-    private String CUSTNAME;
+    private String custname;
     private String CUSTCITY;
     private String WORKINGAREA;
     private String CUSTCOUNTRY;
@@ -23,12 +25,15 @@ public class Customers
     private double PAYMENTAMT;
     private double OUTSTANDINGAMT;
     private String PHONE;
+    
 
     @ManyToOne
     @JoinColumn(name = "AGENTCODE", nullable = false)
+    @JsonIgnoreProperties("customers")
     private Agents agents;
 
     @OneToMany(mappedBy = "customers", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("customers")
     private List<Orders> orders = new ArrayList<>();
 
 
@@ -36,9 +41,9 @@ public class Customers
     {
     }
 
-    public Customers(String CUSTNAME, String CUSTCITY, String WORKINGAREA, String CUSTCOUNTRY, String GRADE, double OPENINGAMT, double RECEIVEAMT, double PAYMENTAMT, double OUTSTANDINGAMT, String PHONE, Agents agents)
+    public Customers(String custname, String CUSTCITY, String WORKINGAREA, String CUSTCOUNTRY, String GRADE, double OPENINGAMT, double RECEIVEAMT, double PAYMENTAMT, double OUTSTANDINGAMT, String PHONE, Agents agents)
     {
-        this.CUSTNAME = CUSTNAME;
+        this.custname = custname;
         this.CUSTCITY = CUSTCITY;
         this.WORKINGAREA = WORKINGAREA;
         this.CUSTCOUNTRY = CUSTCOUNTRY;
@@ -61,14 +66,14 @@ public class Customers
         this.CUSTCODE = CUSTCODE;
     }
 
-    public String getCUSTNAME()
+    public String getCustname()
     {
-        return CUSTNAME;
+        return custname;
     }
 
-    public void setCUSTNAME(String CUSTNAME)
+    public void setCustname(String custname)
     {
-        this.CUSTNAME = CUSTNAME;
+        this.custname = custname;
     }
 
     public String getCUSTCITY()

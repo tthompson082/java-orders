@@ -1,5 +1,7 @@
 package com.lambdaschool.javaorders.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,7 @@ public class Agents
     private String COUNTRY;
 
     @OneToMany(mappedBy = "agents", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("agents")
     private List<Customers> customers = new ArrayList<>();
 
     public Agents()
