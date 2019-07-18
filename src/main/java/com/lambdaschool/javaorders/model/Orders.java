@@ -10,15 +10,15 @@ public class Orders
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long ORDNUM;
+    private long ordnum;
 
     @Column()
-    private double ORDAMOUNT;
-    private double ADVANCEAMOUNT;
-    private String ORDDESCRIPTION;
+    private double ordamount;
+    private double advanceamount;
+    private String orddescription;
 
     @ManyToOne
-    @JoinColumn(name = "CUSTCODE", nullable = false)
+    @JoinColumn(name = "custcode", nullable = false)
     @JsonIgnoreProperties("orders")
     private Customers customers;
 
@@ -26,52 +26,52 @@ public class Orders
     {
     }
 
-    public Orders(double ORDAMOUNT, double ADVANCEAMOUNT, Customers customers, String ORDDESCRIPTION)
+    public Orders(double ordamount, double advanceamount, Customers customers, String orddescription)
     {
-        this.ORDAMOUNT = ORDAMOUNT;
-        this.ADVANCEAMOUNT = ADVANCEAMOUNT;
+        this.ordamount = ordamount;
+        this.advanceamount = advanceamount;
         this.customers = customers;
-        this.ORDDESCRIPTION = ORDDESCRIPTION;
+        this.orddescription = orddescription;
     }
 
-    public long getORDNUM()
+    public long getOrdnum()
     {
-        return ORDNUM;
+        return ordnum;
     }
 
-    public void setORDNUM(long ORDNUM)
+    public void setOrdnum(long ordnum)
     {
-        this.ORDNUM = ORDNUM;
+        this.ordnum = ordnum;
     }
 
-    public double getORDAMOUNT()
+    public double getOrdamount()
     {
-        return ORDAMOUNT;
+        return ordamount;
     }
 
-    public void setORDAMOUNT(double ORDAMOUNT)
+    public void setOrdamount(double ordamount)
     {
-        this.ORDAMOUNT = ORDAMOUNT;
+        this.ordamount = ordamount;
     }
 
-    public double getADVANCEAMOUNT()
+    public double getAdvanceamount()
     {
-        return ADVANCEAMOUNT;
+        return advanceamount;
     }
 
-    public void setADVANCEAMOUNT(double ADVANCEAMOUNT)
+    public void setAdvanceamount(double advanceamount)
     {
-        this.ADVANCEAMOUNT = ADVANCEAMOUNT;
+        this.advanceamount = advanceamount;
     }
 
-    public String getORDDESCRIPTION()
+    public String getOrddescription()
     {
-        return ORDDESCRIPTION;
+        return orddescription;
     }
 
-    public void setORDDESCRIPTION(String ORDDESCRIPTION)
+    public void setOrddescription(String orddescription)
     {
-        this.ORDDESCRIPTION = ORDDESCRIPTION;
+        this.orddescription = orddescription;
     }
 
     public Customers getCustomers()

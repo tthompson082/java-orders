@@ -14,39 +14,39 @@ Create a REST api server to store and read data from an in memory H2 database.
 The table layouts are as follows
 
 * AGENTS
-  * AGENTCODE primary key, not null Long
-  * AGENTNAME string
-  * WORKINGAREA string
-  * COMMISSION double
-  * PHONE string
-  * COUNTRY string
+  * agentcode primary key, not null Long
+  * agentname string
+  * workingarea string
+  * commission double
+  * phone string
+  * country string
 
 * CUSTOMERS
-  * CUSTCODE primary key, not null Long
+  * custcode primary key, not null Long
   * CUSTNAME String, not null
-  * CUSTCITY String
-  * WORKINGAREA String
-  * CUSTCOUNTRY String
-  * GRADE String
-  * OPENINGAMT double
-  * RECEIVEAMT double
-  * PAYMENTAMT double
-  * OUTSTANDINGAMT double
-  * PHONE String
-  * AGENTCODE Long foreign key (one agent to many customers) not null
+  * custcity String
+  * workingarea String
+  * custcountry String
+  * grade String
+  * openingamt double
+  * receiveamt double
+  * paymentamt double
+  * outstandingamt double
+  * phone String
+  * agentcode Long foreign key (one agent to many customers) not null
 
 * ORDERS
-  * ORDNUM primary key, not null Long
-  * ORDAMOUNT double
-  * ADVANCEAMOUNT double
-  * CUSTCODE Long foreign key (one customer to many orders) not null
-  * ORDDESCRIPTION String
+  * ordnum primary key, not null Long
+  * ordamount double
+  * advanceamount double
+  * custcode Long foreign key (one customer to many orders) not null
+  * orddescription String
 
-* Customers has a foreign key to Agents (AGENTCODE) this means:
+* Customers has a foreign key to Agents (agentcode) this means:
   * Customers has a Many to One relationship to Agents and
   * Agents has a One to Many relationship to Customers
 
-* Orders has a foreign key to Customers (CUSTCODE) 
+* Orders has a foreign key to Customers (custcode) 
   * Orders has a Many to One relationship to Customers and
   * Customers has a One to Many relationship to Orders
 

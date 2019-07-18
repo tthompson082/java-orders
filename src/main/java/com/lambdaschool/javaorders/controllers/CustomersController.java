@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -39,7 +38,7 @@ public class CustomersController
         newCustomers = customersService.save(newCustomers);
 
         HttpHeaders responseHeaders = new HttpHeaders();
-        URI newCustomerURI = ServletUriComponentsBuilder.fromCurrentRequest().path("/customer/name/{CUSTCODE}").buildAndExpand(newCustomers.getCUSTCODE()).toUri();
+        URI newCustomerURI = ServletUriComponentsBuilder.fromCurrentRequest().path("/customer/name/{CUSTCODE}").buildAndExpand(newCustomers.getCustcode()).toUri();
         responseHeaders.setLocation(newCustomerURI);
 
         return new ResponseEntity<>(null, responseHeaders, HttpStatus.CREATED);

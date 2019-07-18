@@ -51,16 +51,16 @@ public class AgentsServiceImpl implements AgentsService
     {
         Agents newAgents = new Agents();
 
-        newAgents.setAGENTCODE(agents.getAGENTCODE());
-        newAgents.setAGENTNAME(agents.getAGENTNAME());
-        newAgents.setWORKINGAREA(agents.getWORKINGAREA());
-        newAgents.setCOMMISSION(agents.getCOMMISSION());
-        newAgents.setPHONE(agents.getPHONE());
-        newAgents.setCOUNTRY(agents.getCOUNTRY());
+        newAgents.setAgentcode(agents.getAgentcode());
+        newAgents.setAgentname(agents.getAgentname());
+        newAgents.setWorkingarea(agents.getWorkingarea());
+        newAgents.setCommission(agents.getCommission());
+        newAgents.setPhone(agents.getPhone());
+        newAgents.setCountry(agents.getCountry());
 
         for (Customers c : agents.getCustomers())
         {
-            newAgents.getCustomers().add(new Customers(c.getCustname(), c.getCUSTCITY(), c.getWORKINGAREA(), c.getCUSTCOUNTRY(), c.getGRADE(), c.getOPENINGAMT(), c.getRECEIVEAMT(), c.getPAYMENTAMT(), c.getOUTSTANDINGAMT(), c.getPHONE(), c.getAgents()));
+            newAgents.getCustomers().add(new Customers(c.getCustname(), c.getCustcity(), c.getWorkingarea(), c.getCustcountry(), c.getGrade(), c.getOpeningamt(), c.getReceiveamt(), c.getPaymentamt(), c.getOutstandingamt(), c.getPhone(), c.getAgents()));
         }
 
         return agentrepos.save(newAgents);

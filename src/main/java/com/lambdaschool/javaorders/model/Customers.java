@@ -12,23 +12,23 @@ public class Customers
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long CUSTCODE;
+    private long custcode;
 
     @Column(nullable = false)
     private String custname;
-    private String CUSTCITY;
-    private String WORKINGAREA;
-    private String CUSTCOUNTRY;
-    private String GRADE;
-    private double OPENINGAMT;
-    private double RECEIVEAMT;
-    private double PAYMENTAMT;
-    private double OUTSTANDINGAMT;
-    private String PHONE;
-    
+    private String custcity;
+    private String workingarea;
+    private String custcountry;
+    private String grade;
+    private double openingamt;
+    private double receiveamt;
+    private double paymentamt;
+    private double outstandingamt;
+    private String phone;
+
 
     @ManyToOne
-    @JoinColumn(name = "AGENTCODE", nullable = false)
+    @JoinColumn(name = "agentcode", nullable = false)
     @JsonIgnoreProperties("customers")
     private Agents agents;
 
@@ -41,29 +41,29 @@ public class Customers
     {
     }
 
-    public Customers(String custname, String CUSTCITY, String WORKINGAREA, String CUSTCOUNTRY, String GRADE, double OPENINGAMT, double RECEIVEAMT, double PAYMENTAMT, double OUTSTANDINGAMT, String PHONE, Agents agents)
+    public Customers(String custname, String custcity, String workingarea, String custcountry, String grade, double openingamt, double receiveamt, double paymentamt, double outstandingamt, String phone, Agents agents)
     {
         this.custname = custname;
-        this.CUSTCITY = CUSTCITY;
-        this.WORKINGAREA = WORKINGAREA;
-        this.CUSTCOUNTRY = CUSTCOUNTRY;
-        this.GRADE = GRADE;
-        this.OPENINGAMT = OPENINGAMT;
-        this.RECEIVEAMT = RECEIVEAMT;
-        this.PAYMENTAMT = PAYMENTAMT;
-        this.OUTSTANDINGAMT = OUTSTANDINGAMT;
-        this.PHONE = PHONE;
+        this.custcity = custcity;
+        this.workingarea = workingarea;
+        this.custcountry = custcountry;
+        this.grade = grade;
+        this.openingamt = openingamt;
+        this.receiveamt = receiveamt;
+        this.paymentamt = paymentamt;
+        this.outstandingamt = outstandingamt;
+        this.phone = phone;
         this.agents = agents;
     }
 
-    public long getCUSTCODE()
+    public long getCustcode()
     {
-        return CUSTCODE;
+        return custcode;
     }
 
-    public void setCUSTCODE(long CUSTCODE)
+    public void setCustcode(long custcode)
     {
-        this.CUSTCODE = CUSTCODE;
+        this.custcode = custcode;
     }
 
     public String getCustname()
@@ -76,94 +76,94 @@ public class Customers
         this.custname = custname;
     }
 
-    public String getCUSTCITY()
+    public String getCustcity()
     {
-        return CUSTCITY;
+        return custcity;
     }
 
-    public void setCUSTCITY(String CUSTCITY)
+    public void setCustcity(String custcity)
     {
-        this.CUSTCITY = CUSTCITY;
+        this.custcity = custcity;
     }
 
-    public String getWORKINGAREA()
+    public String getWorkingarea()
     {
-        return WORKINGAREA;
+        return workingarea;
     }
 
-    public void setWORKINGAREA(String WORKINGAREA)
+    public void setWorkingarea(String workingarea)
     {
-        this.WORKINGAREA = WORKINGAREA;
+        this.workingarea = workingarea;
     }
 
-    public String getCUSTCOUNTRY()
+    public String getCustcountry()
     {
-        return CUSTCOUNTRY;
+        return custcountry;
     }
 
-    public void setCUSTCOUNTRY(String CUSTCOUNTRY)
+    public void setCustcountry(String custcountry)
     {
-        this.CUSTCOUNTRY = CUSTCOUNTRY;
+        this.custcountry = custcountry;
     }
 
-    public String getGRADE()
+    public String getGrade()
     {
-        return GRADE;
+        return grade;
     }
 
-    public void setGRADE(String GRADE)
+    public void setGrade(String grade)
     {
-        this.GRADE = GRADE;
+        this.grade = grade;
     }
 
-    public double getOPENINGAMT()
+    public double getOpeningamt()
     {
-        return OPENINGAMT;
+        return openingamt;
     }
 
-    public void setOPENINGAMT(double OPENINGAMT)
+    public void setOpeningamt(double openingamt)
     {
-        this.OPENINGAMT = OPENINGAMT;
+        this.openingamt = openingamt;
     }
 
-    public double getRECEIVEAMT()
+    public double getReceiveamt()
     {
-        return RECEIVEAMT;
+        return receiveamt;
     }
 
-    public void setRECEIVEAMT(double RECEIVEAMT)
+    public void setReceiveamt(double receiveamt)
     {
-        this.RECEIVEAMT = RECEIVEAMT;
+        this.receiveamt = receiveamt;
     }
 
-    public double getPAYMENTAMT()
+    public double getPaymentamt()
     {
-        return PAYMENTAMT;
+        return paymentamt;
     }
 
-    public void setPAYMENTAMT(double PAYMENTAMT)
+    public void setPaymentamt(double paymentamt)
     {
-        this.PAYMENTAMT = PAYMENTAMT;
+        this.paymentamt = paymentamt;
     }
 
-    public double getOUTSTANDINGAMT()
+    public double getOutstandingamt()
     {
-        return OUTSTANDINGAMT;
+        return outstandingamt;
     }
 
-    public void setOUTSTANDINGAMT(double OUTSTANDINGAMT)
+    public void setOutstandingamt(double outstandingamt)
     {
-        this.OUTSTANDINGAMT = OUTSTANDINGAMT;
+        this.outstandingamt = outstandingamt;
     }
 
-    public String getPHONE()
+    public String getPhone()
     {
-        return PHONE;
+        return phone;
     }
 
-    public void setPHONE(String PHONE)
+    public void setPhone(String phone)
     {
-        this.PHONE = PHONE;
+        this.phone = phone;
     }
 
     public Agents getAgents()

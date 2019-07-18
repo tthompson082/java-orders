@@ -63,26 +63,26 @@ public class CustomersServiceImpl implements CustomersService
     @Override
     public Customers save(Customers customers)
     {
-        Customers newCustomer = new Customers();
+        Customers newCustomers = new Customers();
 
-        newCustomer.setCustname(customers.getCustname());
-        newCustomer.setCUSTCITY(customers.getCUSTCITY());
-        newCustomer.setWORKINGAREA(customers.getWORKINGAREA());
-        newCustomer.setCUSTCOUNTRY(customers.getCUSTCOUNTRY());
-        newCustomer.setGRADE(customers.getGRADE());
-        newCustomer.setOPENINGAMT(customers.getOPENINGAMT());
-        newCustomer.setRECEIVEAMT(customers.getRECEIVEAMT());
-        newCustomer.setPAYMENTAMT(customers.getPAYMENTAMT());
-        newCustomer.setOUTSTANDINGAMT(customers.getOUTSTANDINGAMT());
-        newCustomer.setPHONE(customers.getPHONE());
-        newCustomer.setAgents(customers.getAgents());
+        newCustomers.setCustname(customers.getCustname());
+        newCustomers.setCustcity(customers.getCustcity());
+        newCustomers.setWorkingarea(customers.getWorkingarea());
+        newCustomers.setCustcountry(customers.getCustcountry());
+        newCustomers.setGrade(customers.getGrade());
+        newCustomers.setOpeningamt(customers.getOpeningamt());
+        newCustomers.setReceiveamt(customers.getReceiveamt());
+        newCustomers.setPaymentamt(customers.getPaymentamt());
+        newCustomers.setOutstandingamt(customers.getOutstandingamt());
+        newCustomers.setPhone(customers.getPhone());
+        newCustomers.setAgents(customers.getAgents());
 
         for (Orders o : customers.getOrders())
         {
-            newCustomer.getOrders().add(new Orders(o.getORDAMOUNT(), o.getADVANCEAMOUNT(), o.getCustomers(), o.getORDDESCRIPTION()));
+            newCustomers.getOrders().add(new Orders(o.getOrdamount(), o.getAdvanceamount(), o.getCustomers(), o.getOrddescription()));
         }
 
-        return custrepos.save(newCustomer);
+        return custrepos.save(newCustomers);
     }
 
     @Transactional
@@ -96,49 +96,49 @@ public class CustomersServiceImpl implements CustomersService
             currentCustomer.setCustname(customers.getCustname());
         }
 
-        if (customers.getCUSTCITY() != null)
+        if (customers.getCustcity() != null)
         {
-            currentCustomer.setCUSTCITY(customers.getCUSTCITY());
+            currentCustomer.setCustcity(customers.getCustcity());
         }
 
-        if (customers.getWORKINGAREA() != null)
+        if (customers.getWorkingarea() != null)
         {
-            currentCustomer.setWORKINGAREA(customers.getWORKINGAREA());
+            currentCustomer.setWorkingarea(customers.getWorkingarea());
         }
 
-        if (customers.getCUSTCOUNTRY() != null)
+        if (customers.getCustcountry() != null)
         {
-            currentCustomer.setCUSTCOUNTRY(customers.getCUSTCOUNTRY());
+            currentCustomer.setCustcountry(customers.getCustcountry());
         }
 
-        if (customers.getGRADE() != null)
+        if (customers.getGrade() != null)
         {
-            currentCustomer.setGRADE(customers.getGRADE());
+            currentCustomer.setGrade(customers.getGrade());
         }
 
-        if (customers.getOPENINGAMT() != 0)
+        if (customers.getOpeningamt() != 0)
         {
-            currentCustomer.setOPENINGAMT(customers.getOPENINGAMT());
+            currentCustomer.setOpeningamt(customers.getOpeningamt());
         }
 
-        if (customers.getRECEIVEAMT() != 0)
+        if (customers.getReceiveamt() != 0)
         {
-            currentCustomer.setRECEIVEAMT(customers.getRECEIVEAMT());
+            currentCustomer.setReceiveamt(customers.getReceiveamt());
         }
 
-        if (customers.getPAYMENTAMT() != 0)
+        if (customers.getPaymentamt() != 0)
         {
-            currentCustomer.setPAYMENTAMT(customers.getPAYMENTAMT());
+            currentCustomer.setPaymentamt(customers.getPaymentamt());
         }
 
-        if (customers.getOUTSTANDINGAMT() != 0)
+        if (customers.getOutstandingamt() != 0)
         {
-            currentCustomer.setOUTSTANDINGAMT(customers.getOUTSTANDINGAMT());
+            currentCustomer.setOutstandingamt(customers.getOutstandingamt());
         }
 
-        if (customers.getPHONE() != null)
+        if (customers.getPhone() != null)
         {
-            currentCustomer.setPHONE(customers.getPHONE());
+            currentCustomer.setPhone(customers.getPhone());
         }
 
         if (customers.getAgents() != null)

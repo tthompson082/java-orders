@@ -12,14 +12,14 @@ public class Agents
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long AGENTCODE;
+    private long agentcode;
 
     @Column(nullable = false)
-    private String AGENTNAME;
-    private String WORKINGAREA;
-    private double COMMISSION;
-    private String PHONE;
-    private String COUNTRY;
+    private String agentname;
+    private String workingarea;
+    private double commission;
+    private String phone;
+    private String country;
 
     @OneToMany(mappedBy = "agents", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("agents")
@@ -29,73 +29,73 @@ public class Agents
     {
     }
 
-    public Agents(String AGENTNAME, String WORKINGAREA, double COMMISSION, String PHONE, String COUNTRY)
+    public Agents(String agentname, String workingarea, double commission, String phone, String country)
     {
-        this.AGENTNAME = AGENTNAME;
-        this.WORKINGAREA = WORKINGAREA;
-        this.COMMISSION = COMMISSION;
-        this.PHONE = PHONE;
-        this.COUNTRY = COUNTRY;
+        this.agentname = agentname;
+        this.workingarea = workingarea;
+        this.commission = commission;
+        this.phone = phone;
+        this.country = country;
     }
 
-    public long getAGENTCODE()
+    public long getAgentcode()
     {
-        return AGENTCODE;
+        return agentcode;
     }
 
-    public void setAGENTCODE(long AGENTCODE)
+    public void setAgentcode(long agentcode)
     {
-        this.AGENTCODE = AGENTCODE;
+        this.agentcode = agentcode;
     }
 
-    public String getAGENTNAME()
+    public String getAgentname()
     {
-        return AGENTNAME;
+        return agentname;
     }
 
-    public void setAGENTNAME(String AGENTNAME)
+    public void setAgentname(String agentname)
     {
-        this.AGENTNAME = AGENTNAME;
+        this.agentname = agentname;
     }
 
-    public String getWORKINGAREA()
+    public String getWorkingarea()
     {
-        return WORKINGAREA;
+        return workingarea;
     }
 
-    public void setWORKINGAREA(String WORKINGAREA)
+    public void setWorkingarea(String workingarea)
     {
-        this.WORKINGAREA = WORKINGAREA;
+        this.workingarea = workingarea;
     }
 
-    public double getCOMMISSION()
+    public double getCommission()
     {
-        return COMMISSION;
+        return commission;
     }
 
-    public void setCOMMISSION(double COMMISSION)
+    public void setCommission(double commission)
     {
-        this.COMMISSION = COMMISSION;
+        this.commission = commission;
     }
 
-    public String getPHONE()
+    public String getPhone()
     {
-        return PHONE;
+        return phone;
     }
 
-    public void setPHONE(String PHONE)
+    public void setPhone(String phone)
     {
-        this.PHONE = PHONE;
+        this.phone = phone;
     }
 
-    public String getCOUNTRY()
+    public String getCountry()
     {
-        return COUNTRY;
+        return country;
     }
 
-    public void setCOUNTRY(String COUNTRY)
+    public void setCountry(String country)
     {
-        this.COUNTRY = COUNTRY;
+        this.country = country;
     }
 
     public List<Customers> getCustomers()
